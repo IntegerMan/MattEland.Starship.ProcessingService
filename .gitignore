@@ -14,3 +14,13 @@ MattEland.Starship.ProcessingService/obj/
 MattEland.Starship.Logic/bin/
 
 MattEland.Starship.Logic/obj/
+
+NDependOut/NDependReportFiles/
+
+NDependOut/2019_09/
+
+NDependOut/InfoWarnings.xml
+
+*.ndar
+
+NDependOut/NDependReport.html
