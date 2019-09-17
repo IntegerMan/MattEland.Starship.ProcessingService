@@ -1,3 +1,5 @@
+using MattEland.Starship.Logic;
+using MattEland.Starship.ProcessingService.Controllers;
 using NUnit.Framework;
 
 namespace Tests
@@ -7,7 +9,16 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            // Arrange
+            var controller = new GamesController();
+
+            // Act
+            var result = controller.NewGame();
+
+            // Assert
+            Assert.IsNotNull(result);
+            GameState state = (GameState) result.Value;
+            Assert.AreEqual(2, state.Id);
         }
     }
 }

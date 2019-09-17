@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattEland.Starship.ProcessingService", "MattEland.Starship.ProcessingService\MattEland.Starship.ProcessingService.csproj", "{78253C79-4228-4F83-9A62-1BB92B4E987C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MattEland.Starship.ProcessingService", "MattEland.Starship.ProcessingService\MattEland.Starship.ProcessingService.csproj", "{78253C79-4228-4F83-9A62-1BB92B4E987C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattEland.Starship.Tests", "MattEland.Starship.Tests\MattEland.Starship.Tests.csproj", "{73FACA07-AF08-49D7-9BF7-704ED74CE752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MattEland.Starship.Tests", "MattEland.Starship.Tests\MattEland.Starship.Tests.csproj", "{73FACA07-AF08-49D7-9BF7-704ED74CE752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattEland.Starship.Logic", "MattEland.Starship.Logic\MattEland.Starship.Logic.csproj", "{5115412F-8E0E-47C2-A10B-8639897F3187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MattEland.Starship.Logic", "MattEland.Starship.Logic\MattEland.Starship.Logic.csproj", "{5115412F-8E0E-47C2-A10B-8639897F3187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4CCB4B2-2DA6-47B1-B50E-AC2C6D8B53BE}
+	EndGlobalSection
+	GlobalSection(NDepend) = preSolution
+		Project = ".\MattEland.Starship.ProcessingService.ndproj"
 	EndGlobalSection
 EndGlobal
