@@ -1,8 +1,8 @@
-using MattEland.Starship.Logic;
+using MattEland.Starship.Logic.Models;
 using MattEland.Starship.ProcessingService.Controllers;
 using NUnit.Framework;
 
-namespace Tests
+namespace MattEland.Starship.Tests
 {
     public class Tests
     {

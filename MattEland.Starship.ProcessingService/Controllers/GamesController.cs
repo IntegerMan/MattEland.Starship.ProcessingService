@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MattEland.Starship.Logic;
+using MattEland.Starship.Logic.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

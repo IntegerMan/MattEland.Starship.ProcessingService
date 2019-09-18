@@ -1,4 +1,4 @@
-﻿namespace MattEland.Starship.Logic
+﻿namespace MattEland.Starship.Logic.Models
 {
     public struct GameTime
     {

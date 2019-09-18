@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MattEland.Starship.Logic.Models;
+using MattEland.Starship.Logic.Simulation;
 
 namespace MattEland.Starship.Logic
 {
     public class GameRepository
     {
+        private readonly GameSimulator _simulator = new GameSimulator();
         private readonly IList<GameState> _games = new List<GameState>();
 
         public GameRepository()
@@ -20,7 +23,7 @@ namespace MattEland.Starship.Logic
         public GameState CreateNewGame()
         {
             int id = _games.Count + 1;
-            var game = new GameState(id);
+            var game = _simulator.BuildNewGameState(id);
             _games.Add(game);
 
             return game;

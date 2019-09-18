@@ -2,7 +2,7 @@
 using MattEland.Starship.Logic;
 using NUnit.Framework;
 
-namespace Tests
+namespace MattEland.Starship.Tests
 {
     public class RepositoryTests
     {
