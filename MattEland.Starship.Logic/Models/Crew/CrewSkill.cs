@@ -1,4 +1,4 @@
-﻿namespace MattEland.Starship.Logic.Models
+﻿namespace MattEland.Starship.Logic.Models.Crew
 {
     public class CrewSkill
     {

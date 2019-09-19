@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MattEland.Starship.Logic.Models.Crew;
 
 namespace MattEland.Starship.Logic.Models
 {

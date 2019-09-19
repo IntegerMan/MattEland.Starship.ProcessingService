@@ -24,3 +24,11 @@ NDependOut/InfoWarnings.xml
 *.ndar
 
 NDependOut/NDependReport.html
+
+MattEland.AI.BehaviorTrees/bin/
+
+MattEland.AI.BehaviorTrees/obj/
+
+MattEland.AI.BehaviorTrees.Tests/bin/
+
+MattEland.AI.BehaviorTrees.Tests/obj/

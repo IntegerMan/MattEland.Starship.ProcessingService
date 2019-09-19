@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MattEland.Starship.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MattEland.Starship.Logic", "MattEland.Starship.Logic\MattEland.Starship.Logic.csproj", "{5115412F-8E0E-47C2-A10B-8639897F3187}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattEland.AI.BehaviorTrees", "MattEland.AI.BehaviorTrees\MattEland.AI.BehaviorTrees.csproj", "{F7D35FFE-C3B2-441D-ACCB-8973A154F2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattEland.AI.BehaviorTrees.Tests", "MattEland.AI.BehaviorTrees.Tests\MattEland.AI.BehaviorTrees.Tests.csproj", "{6DB04C47-E03B-4B45-AD29-455C1E15D508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,14 +31,19 @@ Global
 		{5115412F-8E0E-47C2-A10B-8639897F3187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5115412F-8E0E-47C2-A10B-8639897F3187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5115412F-8E0E-47C2-A10B-8639897F3187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D35FFE-C3B2-441D-ACCB-8973A154F2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D35FFE-C3B2-441D-ACCB-8973A154F2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D35FFE-C3B2-441D-ACCB-8973A154F2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D35FFE-C3B2-441D-ACCB-8973A154F2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB04C47-E03B-4B45-AD29-455C1E15D508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB04C47-E03B-4B45-AD29-455C1E15D508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB04C47-E03B-4B45-AD29-455C1E15D508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB04C47-E03B-4B45-AD29-455C1E15D508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4CCB4B2-2DA6-47B1-B50E-AC2C6D8B53BE}
-	EndGlobalSection
-	GlobalSection(NDepend) = preSolution
-		Project = ".\MattEland.Starship.ProcessingService.ndproj"
 	EndGlobalSection
 EndGlobal

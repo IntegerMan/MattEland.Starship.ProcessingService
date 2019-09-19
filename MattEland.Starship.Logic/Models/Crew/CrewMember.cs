@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
-namespace MattEland.Starship.Logic.Models
+namespace MattEland.Starship.Logic.Models.Crew
 {
-    public class CrewMember
+    public abstract class CrewMember
     {
+        protected CrewMember(int id)
+        {
+            Id = id;
+        }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Rank Rank { get; set; }
@@ -13,9 +17,9 @@ namespace MattEland.Starship.Logic.Models
         public IEnumerable<CrewSkill> Skills { get; set; }
 
         public bool IsEnlisted => this.Rank < Rank.EnsignJg;
-
         public bool IsOfficer => !this.IsEnlisted;
-        public int Id { get; set; }
+
+        public int Id { get; }
 
         public CrewSkill GetSkill(Skill desired)
         {

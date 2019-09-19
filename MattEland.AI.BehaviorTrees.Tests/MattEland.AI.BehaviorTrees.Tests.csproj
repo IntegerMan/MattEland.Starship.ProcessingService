@@ -16,14 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MattEland.Starship.Logic\MattEland.Starship.Logic.csproj" />
-    <ProjectReference Include="..\MattEland.Starship.ProcessingService\MattEland.Starship.ProcessingService.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
-      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\MattEland.AI.BehaviorTrees\MattEland.AI.BehaviorTrees.csproj" />
   </ItemGroup>
 
 </Project>

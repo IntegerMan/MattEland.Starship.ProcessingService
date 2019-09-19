@@ -2,6 +2,7 @@
 using Bogus;
 using Bogus.Extensions;
 using MattEland.Starship.Logic.Models;
+using MattEland.Starship.Logic.Models.Crew;
 
 namespace MattEland.Starship.Logic.Simulation
 {
@@ -11,11 +12,12 @@ namespace MattEland.Starship.Logic.Simulation
         {
             int nextId = state.NextCrewId;
 
+            var factory = new CrewFactory();
+
             var faker = new Faker<CrewMember>()
-                .RuleFor(c => c.Id, f => nextId++)
+                .CustomInstantiator(f => factory.Create(f.PickRandom<Department>(), nextId++))
                 .RuleFor(c => c.FirstName, f => f.Person.FirstName)
                 .RuleFor(c => c.LastName, f => f.Person.LastName)
-                .RuleFor(c => c.Department, f => f.PickRandom<Department>())
                 .RuleFor(c => c.Rank, f => f.PickRandom<Rank>())
                 .RuleFor(c => c.DaysInRank, f => f.Random.Int(0, 500));
 
