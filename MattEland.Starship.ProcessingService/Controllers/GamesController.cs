@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using MattEland.Starship.Logic;
 using MattEland.Starship.Logic.Models;
+using MattEland.Starship.Logic.Simulation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,7 @@ namespace MattEland.Starship.ProcessingService.Controllers
     public class GamesController : ControllerBase
     {
         private readonly GameRepository _repository = new GameRepository();
+        private readonly GameSimulator _simulator = new GameSimulator();
 
         // GET api/games
         [HttpGet]
@@ -31,6 +33,30 @@ namespace MattEland.Starship.ProcessingService.Controllers
             }
 
             return new NotFoundResult();
+        }
+
+        // PUT api/games/5
+        [HttpPut("{id}")]
+        public ActionResult<GameState> ProcessGameMove(int id, [FromBody] GameState gameState)
+        {
+            // Validate the input
+            if (gameState == null)
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+            if (gameState.Id != id)
+            {
+                return new BadRequestObjectResult("The game ID did not match the game ID specified in the game state");
+            }
+
+            // Simulate the turn
+            var newState = _simulator.SimulateTurn(gameState);
+
+            // Save the new state
+            _repository.UpdateState(newState);
+
+            // Return the new state
+            return Ok(newState);
         }
 
         // POST api/games

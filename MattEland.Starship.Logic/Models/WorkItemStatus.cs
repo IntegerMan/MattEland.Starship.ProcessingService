@@ -2,6 +2,12 @@
 {
     public enum WorkItemStatus
     {
-        New
+        New,
+        ReadyForWork,
+        InProgress,
+        ReadyForReview,
+        ReadyForTesting,
+        ReadyForRelease,
+        Released
     }
 }

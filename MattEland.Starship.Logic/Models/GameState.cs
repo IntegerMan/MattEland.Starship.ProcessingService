@@ -38,5 +38,7 @@ namespace MattEland.Starship.Logic.Models
         public void Add(IEnumerable<WorkItem> workItems) => _workItems.AddRange(workItems);
 
         public void Add(IEnumerable<ShipSystem> shipSystems) => _systems.AddRange(shipSystems);
+
+        public void Add(GameMessage message) => _messages.Add(message);
     }
 }

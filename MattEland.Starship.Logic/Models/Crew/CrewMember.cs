@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace MattEland.Starship.Logic.Models.Crew
 {
@@ -20,11 +21,11 @@ namespace MattEland.Starship.Logic.Models.Crew
         public bool IsOfficer => !this.IsEnlisted;
 
         public int Id { get; }
+        public string FullName => $"{FirstName} {LastName}";
 
         public CrewSkill GetSkill(Skill desired)
         {
-            //return this.Skills.FirstOrDefault(s => s.Skill == desired);
-            return null;
+            return this.Skills.FirstOrDefault(s => s.Skill.InternalName == desired.InternalName);
         }
 
         /*

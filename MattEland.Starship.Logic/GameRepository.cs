@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using MattEland.Starship.Logic.Models;
 using MattEland.Starship.Logic.Simulation;
 
@@ -8,7 +7,7 @@ namespace MattEland.Starship.Logic
     public class GameRepository
     {
         private readonly GameSimulator _simulator = new GameSimulator();
-        private readonly IList<GameState> _games = new List<GameState>();
+        private readonly IDictionary<int, GameState> _games = new Dictionary<int, GameState>();
 
         public GameRepository()
         {
@@ -16,24 +15,26 @@ namespace MattEland.Starship.Logic
             CreateNewGame();
         }
 
-        public IEnumerable<GameState> Games => _games;
+        public IEnumerable<GameState> Games => _games.Values;
 
-        public GameState GetGame(int id) => _games.FirstOrDefault(g => g.Id == id);
+        public GameState GetGame(int id)
+        {
+            _games.TryGetValue(id, out var game);
+            return game;
+        }
 
         public GameState CreateNewGame()
         {
             int id = _games.Count + 1;
-            var game = _simulator.BuildNewGameState(id);
-            _games.Add(game);
+            var options = new NewGameOptions(1, 2, 1);
+            var game = _simulator.BuildNewGameState(id, options);
+            _games[id] = game;
 
             return game;
         }
 
-        public bool DeleteGame(int id)
-        {
-            var game = _games.FirstOrDefault(g => g.Id == id);
+        public bool DeleteGame(int id) => _games.Remove(id);
 
-            return game != null && _games.Remove(game);
-        }
+        public void UpdateState(GameState newState) => _games[newState.Id] = newState;
     }
 }
