@@ -1,5 +1,4 @@
 ﻿using MattEland.Starship.Logic.Models;
-using MattEland.Starship.Logic.Models.Crew;
 using MattEland.Starship.Logic.Simulation.Behaviors;
 
 namespace MattEland.Starship.Logic.Simulation
@@ -39,18 +38,6 @@ namespace MattEland.Starship.Logic.Simulation
 
             // Return the 'new' state
             return gameState;
-        }
-    }
-
-    public class CrewContext
-    {
-        public CrewMember CrewMember { get; }
-        public GameState State { get; }
-
-        public CrewContext(CrewMember crewMember, GameState gameState)
-        {
-            CrewMember = crewMember;
-            State = gameState;
         }
     }
 }

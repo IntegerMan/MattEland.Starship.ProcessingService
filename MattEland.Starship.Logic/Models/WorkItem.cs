@@ -16,5 +16,6 @@
         public WorkItemType WorkItemType { get; } = WorkItemType.Incident;
         public WorkItemStatus Status { get; set; } = WorkItemStatus.New;
         public Priority Priority { get; set; } = Priority.Normal;
+        public int ProgressMade { get; set; }
     }
 }

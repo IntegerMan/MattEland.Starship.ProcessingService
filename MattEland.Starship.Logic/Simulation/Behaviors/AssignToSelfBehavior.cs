@@ -8,20 +8,23 @@ namespace MattEland.Starship.Logic.Simulation.Behaviors
     {
         public override BehaviorResult<CrewContext> Evaluate(CrewContext context)
         {
-            var eligible = context.State.WorkItems.Where(wi => wi.AssignedCrewId == null &&
-                                                               (wi.Status == WorkItemStatus.New ||
-                                                                wi.Status == WorkItemStatus.ReadyForWork)).ToList();
+            var item = context.UnassignedItems.FirstOrDefault(wi => wi.Status == WorkItemStatus.New ||
+                                                              wi.Status == WorkItemStatus.ReadyForWork);
 
-            if (eligible.Any())
+            if (item == null) return SkippedResult(context);
+
+            item.AssignedCrewId = context.CrewMember.Id;
+
+            if (item.Status == WorkItemStatus.New)
             {
-                var item = eligible.First();
-                item.AssignedCrewId = context.CrewMember.Id;
                 item.Status = WorkItemStatus.ReadyForWork;
-
-                return MatchedResult(context);
+                AddMessage(context, $"{context.CrewMember.FullName} marks {item.Title} as ready to work");
             }
 
-            return PassedResult(context);
+            AddMessage(context, $"{context.CrewMember.FullName} assigns {item.Title} to themselves");
+
+            return MatchedResult(context);
+
         }
     }
 }

@@ -12,6 +12,7 @@
     <PackageReference Include="MattEland.Shared" Version="1.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="OneOf" Version="2.1.150" />
   </ItemGroup>
 
   <ItemGroup>

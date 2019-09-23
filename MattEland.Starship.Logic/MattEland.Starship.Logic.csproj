@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Bogus" Version="28.2.1" />
     <PackageReference Include="MattEland.Shared" Version="1.0.4" />
+    <PackageReference Include="OneOf" Version="2.1.150" />
   </ItemGroup>
 
   <ItemGroup>
